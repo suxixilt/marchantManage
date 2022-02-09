@@ -1,0 +1,75 @@
+#DataBase start
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/jesper?useSSL=false&characterEncoding=UTF-8&serverTimezone=CST
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#Database end
+
+#mongodb start
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/springboot-db
+
+#thymeleaf start
+  thymeleaf:
+    prefix: classpath:/templates/
+    mode: HTML5
+    encoding: UTF-8
+    cache: false
+    suffix: .html
+#thymeleaf end
+
+
+#mail config
+  mail:
+    protocol: smtp
+    host: smtp.163.com
+    port: 25
+    username: suxixi0308@163.com
+    password: FULDQJRCSMXOQRAB
+    default-encoding: UTF-8
+    properties:
+      mail:
+        debug: true
+
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout: 10
+
+    jedis:
+      pool:
+        max-idle: 500
+        max-active: 1000
+        max-wait: 500
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      retries: 0
+      batch-size: 16384
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+    consumer:
+      group-id: test-consumer-group
+      auto-offset-reset: earliest
+      enable-auto-commit: true
+      auto-commit-interval: 100
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+
+#mybatis start
+mybatis:
+  config-location: classpath:/mybatis-config.xml
+#mybatis end
+
+  mapper-locations: classpath:/mapper/*Mapper.xml
+
+
+

@@ -35,13 +35,16 @@ public class ItemCategoryController {
                                      @PathVariable Integer pageCount,
                                      Model model) {
         //判断
-        if (pageSize == 0)
+        if (pageSize == 0) {
             pageSize = 20;
-        if (pageCurrent == 0)
+        }
+        if (pageCurrent == 0) {
             pageCurrent = 1;
+        }
         int rows = itemCategoryMapper.count(itemCategory);
-        if (pageCount == 0)
+        if (pageCount == 0) {
             pageCount = rows % pageSize == 0 ? (rows / pageSize) : (rows / pageSize) + 1;
+        }
         itemCategory.setStart((pageCurrent - 1) * pageSize);
         itemCategory.setEnd(pageSize);
         List<ItemCategory> list = itemCategoryMapper.list(itemCategory);

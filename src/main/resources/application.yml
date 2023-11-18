@@ -6,7 +6,6 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/jesper?useSSL=false&characterEncoding=UTF-8&serverTimezone=CST
     driver-class-name: com.mysql.cj.jdbc.Driver
 #Database end
-
 #mongodb start
   data:
     mongodb:
@@ -70,6 +69,4 @@ mybatis:
 #mybatis end
 
   mapper-locations: classpath:/mapper/*Mapper.xml
-
-
 

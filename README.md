@@ -31,3 +31,5 @@
 ### 问题：如何启动本系统？
 1. 将sql文件在MySQL运行生成表和数据，启动Redis服务， MongoDB选择性开启（不开启时会报错但不影响系统正常访问，用到上传照片功能需要启动MongoDB）
 2. 最后直接启动Application类后访问[http://localhost:8080/user/login](http://localhost:8080/user/login)就可以进入本系统！
+
+## commit init
